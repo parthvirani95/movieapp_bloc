@@ -20,6 +20,11 @@ dependencies:
   dartz: any
   get_it: any
   pedantic: any
+  # flutter_screenutil: any
+  google_fonts: any
+  flutter_bloc: any
+  flutter_svg: any
+  cached_network_image: any
 
 dev_dependencies:
   flutter_test:
@@ -31,3 +36,7 @@ dev_dependencies:
 flutter:
  
   uses-material-design: true
+ 
+  assets:
+    - assets/svgs/
+    - assets/pngs/
