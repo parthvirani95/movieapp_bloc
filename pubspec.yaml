@@ -10,7 +10,7 @@ environment:
 
 
 dependencies:
-  flutter:
+  flutter_localizations:
     sdk: flutter
 
 
@@ -40,3 +40,4 @@ flutter:
   assets:
     - assets/svgs/
     - assets/pngs/
+    - assets/languages/

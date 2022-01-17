@@ -7,3 +7,4 @@ extension SizeExtension on num {
 
   double get sp => ScreenUtil().setSp(this).toDouble();
 }
+

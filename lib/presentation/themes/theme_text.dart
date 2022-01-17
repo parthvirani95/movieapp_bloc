@@ -13,5 +13,21 @@ class ThemeText {
         color: Colors.white,
       );
 
-  static getTextTheme() => TextTheme(headline6: _whiteHeadline6);
+  static TextStyle get whiteSubtitle1 => _poppinsTextTheme.subtitle1!
+      .copyWith(fontSize: Sizes.dimen_16.sp, color: Colors.white);
+
+  static TextStyle get whiteBodyText2 => _poppinsTextTheme.bodyText2!.copyWith(
+        color: Colors.white,
+        fontSize: Sizes.dimen_14.sp,
+        wordSpacing: 0.25,
+        letterSpacing: 0.25,
+        height: 1.5,
+      );
+
+  static getTextTheme() => TextTheme(
+        headline6: _whiteHeadline6,
+        subtitle1: whiteSubtitle1,
+        bodyText2: whiteBodyText2,
+      );
+      
 }
