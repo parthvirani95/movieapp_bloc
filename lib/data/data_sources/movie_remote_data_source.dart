@@ -1,11 +1,8 @@
-import 'dart:convert';
+import 'dart:io';
 
 import 'package:dartz/dartz.dart';
 import 'package:flutter/foundation.dart';
-import 'package:http/http.dart';
 import 'package:movieapp_bloc/data/core/api_client.dart';
-import 'package:movieapp_bloc/data/core/api_constants.dart';
-import 'package:movieapp_bloc/data/models/movie_model.dart';
 import 'package:movieapp_bloc/data/models/movies_result_model.dart';
 import 'package:movieapp_bloc/domain/entities/app_error.dart';
 import 'package:movieapp_bloc/domain/entities/movie_entity.dart';
@@ -31,8 +28,10 @@ class MovieRemoteDataSourceImpl extends MovieRemoteDataSource {
         print(response);
       }
       return Right(MoviesResultModel.fromJson(response).movies);
+    } on SocketException {
+      return Left(AppError(AppErrorType.network));
     } on Exception {
-      return const Left(AppError('Something went wrong'));
+      return Left(AppError(AppErrorType.api));
     }
   }
 
@@ -45,8 +44,10 @@ class MovieRemoteDataSourceImpl extends MovieRemoteDataSource {
       }
 
       return Right(MoviesResultModel.fromJson(response).movies);
+    } on SocketException {
+      return Left(AppError(AppErrorType.network));
     } on Exception {
-      return const Left(AppError('Something went wrong'));
+      return Left(AppError(AppErrorType.api));
     }
   }
 
@@ -59,8 +60,10 @@ class MovieRemoteDataSourceImpl extends MovieRemoteDataSource {
       }
 
       return Right(MoviesResultModel.fromJson(response).movies);
+    } on SocketException {
+      return Left(AppError(AppErrorType.network));
     } on Exception {
-      return const Left(AppError('Something went wrong'));
+      return Left(AppError(AppErrorType.api));
     }
   }
 
@@ -71,10 +74,11 @@ class MovieRemoteDataSourceImpl extends MovieRemoteDataSource {
       if (kDebugMode) {
         print(response);
       }
-
       return Right(MoviesResultModel.fromJson(response).movies);
+    } on SocketException {
+      return Left(AppError(AppErrorType.network));
     } on Exception {
-      return const Left(AppError('Something went wrong'));
+      return Left(AppError(AppErrorType.api));
     }
   }
 }

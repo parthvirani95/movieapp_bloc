@@ -27,8 +27,7 @@ class MovieTabbedBloc extends Bloc<MovieTabbedEvent, MovieTabbedState> {
     on<MovieTabChangedEvent>(movieTabChangedEvent);
   }
 
-  FutureOr<void> movieTabChangedEvent(
-      MovieTabChangedEvent event, Emitter<MovieTabbedState> emit) async {
+  FutureOr<void> movieTabChangedEvent(MovieTabChangedEvent event, Emitter<MovieTabbedState> emit) async {
     late Either<AppError, List<MovieEntity>> moviesEither;
     switch (event.currentTabIndex) {
       case 0:
@@ -44,10 +43,9 @@ class MovieTabbedBloc extends Bloc<MovieTabbedEvent, MovieTabbedState> {
 
     emit(
       moviesEither.fold(
-        (l) => MovieTabLoadError(currentTabIndex: event.currentTabIndex),
+        (l) => MovieTabLoadError(currentTabIndex: event.currentTabIndex, errorType: l.errorType),
         (movies) {
-          return MovieTabChanged(
-              currentTabIndex: event.currentTabIndex, movies: movies);
+          return MovieTabChanged(currentTabIndex: event.currentTabIndex, movies: movies);
         },
       ),
     );

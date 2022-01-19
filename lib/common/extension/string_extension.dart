@@ -7,7 +7,7 @@ extension StringExtension on String {
     return this.length > 15 ? '${this.substring(0, 15)}...' : this;
   }
 
-  String t(context) {
+  String translate(context) {
     return AppLocalizations.of(context)!.translate(this)!;
   }
 }

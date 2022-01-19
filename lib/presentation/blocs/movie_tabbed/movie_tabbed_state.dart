@@ -11,20 +11,19 @@ abstract class MovieTabbedState extends Equatable {
 
 class MovieTabbedInitial extends MovieTabbedState {
   final int currentTabIndex;
-  const MovieTabbedInitial({required this.currentTabIndex})
-      : super(currentTabIndex: currentTabIndex);
+  const MovieTabbedInitial({required this.currentTabIndex}) : super(currentTabIndex: currentTabIndex);
 }
 
 class MovieTabChanged extends MovieTabbedState {
   final List<MovieEntity> movies;
-  const MovieTabChanged({required int currentTabIndex, required this.movies})
-      : super(currentTabIndex: currentTabIndex);
+  const MovieTabChanged({required int currentTabIndex, required this.movies}) : super(currentTabIndex: currentTabIndex);
 
   @override
   List<Object> get props => [currentTabIndex, movies];
 }
 
 class MovieTabLoadError extends MovieTabbedState {
-  const MovieTabLoadError({required int currentTabIndex})
-      : super(currentTabIndex: currentTabIndex);
+  final AppErrorType errorType;
+
+  const MovieTabLoadError({required int currentTabIndex, required this.errorType}) : super(currentTabIndex: currentTabIndex);
 }

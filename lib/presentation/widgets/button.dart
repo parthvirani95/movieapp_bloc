@@ -34,7 +34,7 @@ class Button extends StatelessWidget {
       child: TextButton(
         onPressed: onPressed,
         child: Text(
-          text.t(context),
+          text.translate(context),
           style: Theme.of(context).textTheme.button,
         ),
       ),

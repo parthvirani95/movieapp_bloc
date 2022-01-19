@@ -9,7 +9,6 @@ import 'package:movieapp_bloc/presentation/app_dialog.dart';
 import 'package:movieapp_bloc/presentation/blocs/language/language_bloc.dart';
 import 'package:movieapp_bloc/presentation/journeys/drawer/navigation_expanded_list_item.dart';
 import 'package:movieapp_bloc/presentation/journeys/drawer/navigation_list_item.dart';
-import 'package:movieapp_bloc/presentation/themes/app_color.dart';
 import 'package:movieapp_bloc/presentation/widgets/logo.dart';
 import 'package:wiredash/wiredash.dart';
 
@@ -42,11 +41,11 @@ class NavigationDrawer extends StatelessWidget {
               child: Logo(height: Sizes.dimen_20.h),
             ),
             NavigationListItem(
-              title: TranslationConstants.favoriteMovies.t(context),
+              title: TranslationConstants.favoriteMovies.translate(context),
               onPressed: () {},
             ),
             NavigationExpandedListItem(
-              title: TranslationConstants.language.t(context),
+              title: TranslationConstants.language.translate(context),
               children: Languages.languages.map((e) => e.value).toList(),
               onPressed: (index) {
                 BlocProvider.of<LanguageBloc>(context).add(
@@ -57,14 +56,14 @@ class NavigationDrawer extends StatelessWidget {
               },
             ),
             NavigationListItem(
-              title: TranslationConstants.feedback.t(context),
+              title: TranslationConstants.feedback.translate(context),
               onPressed: () {
                 Navigator.of(context).pop();
                 Wiredash.of(context)!.show();
               },
             ),
             NavigationListItem(
-              title: TranslationConstants.about.t(context),
+              title: TranslationConstants.about.translate(context),
               onPressed: () {
                 Navigator.of(context).pop();
                 _showDialog(context);

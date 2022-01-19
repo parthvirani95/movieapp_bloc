@@ -10,13 +10,7 @@ class AppDialog extends StatelessWidget {
   final String title, description, buttonText;
   final Widget? image;
 
-  const AppDialog(
-      {Key? key,
-      required this.title,
-      required this.description,
-      required this.buttonText,
-      this.image})
-      : super(key: key);
+  const AppDialog({Key? key, required this.title, required this.description, required this.buttonText, this.image}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -46,11 +40,11 @@ class AppDialog extends StatelessWidget {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            Text(title.t(context)),
+            Text(title.translate(context)),
             Padding(
               padding: EdgeInsets.symmetric(vertical: Sizes.dimen_6.h),
               child: Text(
-                description.t(context),
+                description.translate(context),
                 textAlign: TextAlign.center,
               ),
             ),
