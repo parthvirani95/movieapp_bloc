@@ -19,6 +19,7 @@ class MovieApp extends StatefulWidget {
 class _MovieAppState extends State<MovieApp> {
   late LanguageBloc _languageBloc;
   final _navigatorKey = GlobalKey<NavigatorState>();
+
   @override
   void initState() {
     super.initState();
