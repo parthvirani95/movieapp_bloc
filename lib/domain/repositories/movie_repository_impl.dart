@@ -1,6 +1,8 @@
+import 'dart:io';
+
 import 'package:dartz/dartz.dart';
 import 'package:movieapp_bloc/data/data_sources/movie_remote_data_source.dart';
-import 'package:movieapp_bloc/data/models/movie_model.dart';
+import 'package:movieapp_bloc/data/models/movie_detail_model.dart';
 import 'package:movieapp_bloc/domain/entities/app_error.dart';
 import 'package:movieapp_bloc/domain/entities/movie_entity.dart';
 import 'package:movieapp_bloc/domain/repositories/movie_repository.dart';
@@ -46,6 +48,17 @@ class MovieRepositoryImpl extends MovieRepository {
       return movies;
     } on Exception {
       throw Exception('Something goes wrong.');
+    }
+  }
+
+  Future<Either<AppError, MovieDetailModel>> getMovieDetail(int id) async {
+    try {
+      final movie = await remoteDataSource.getMovieDetail(id);
+      return Right(movie);
+    } on SocketException {
+      return Left(AppError(AppErrorType.network));
+    } on Exception {
+      return Left(AppError(AppErrorType.api));
     }
   }
 }

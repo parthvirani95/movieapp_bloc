@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:dartz/dartz.dart';
 import 'package:flutter/foundation.dart';
 import 'package:movieapp_bloc/data/core/api_client.dart';
+import 'package:movieapp_bloc/data/models/movie_detail_model.dart';
 import 'package:movieapp_bloc/data/models/movies_result_model.dart';
 import 'package:movieapp_bloc/domain/entities/app_error.dart';
 import 'package:movieapp_bloc/domain/entities/movie_entity.dart';
@@ -12,6 +13,7 @@ abstract class MovieRemoteDataSource {
   Future<Either<AppError, List<MovieEntity>>> getPlayingNow();
   Future<Either<AppError, List<MovieEntity>>> getComingSoon();
   Future<Either<AppError, List<MovieEntity>>> getPopular();
+  Future<MovieDetailModel> getMovieDetail(int id);
 }
 
 class MovieRemoteDataSourceImpl extends MovieRemoteDataSource {
@@ -80,5 +82,15 @@ class MovieRemoteDataSourceImpl extends MovieRemoteDataSource {
     } on Exception {
       return Left(AppError(AppErrorType.api));
     }
+  }
+
+  @override
+  Future<MovieDetailModel> getMovieDetail(int id) async {
+    final response = await _apiClient.get('movie/$id');
+    if (kDebugMode) {
+      print(response);
+    }
+    final movie = MovieDetailModel.fromJson(response);
+    return movie;
   }
 }

@@ -13,8 +13,7 @@ class ThemeText {
         color: Colors.white,
       );
 
-  static TextStyle get whiteSubtitle1 => _poppinsTextTheme.subtitle1!
-      .copyWith(fontSize: Sizes.dimen_16.sp, color: Colors.white);
+  static TextStyle get whiteSubtitle1 => _poppinsTextTheme.subtitle1!.copyWith(fontSize: Sizes.dimen_16.sp, color: Colors.white);
 
   static TextStyle get whiteBodyText2 => _poppinsTextTheme.bodyText2!.copyWith(
         color: Colors.white,
