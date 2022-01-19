@@ -25,6 +25,7 @@ dependencies:
   flutter_bloc: any
   flutter_svg: any
   cached_network_image: any
+  wiredash: ^0.7.0+1
 
 dev_dependencies:
   flutter_test:

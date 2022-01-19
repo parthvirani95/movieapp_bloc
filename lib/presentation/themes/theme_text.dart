@@ -24,10 +24,21 @@ class ThemeText {
         height: 1.5,
       );
 
+  static TextStyle get whiteHeadline5 => _poppinsTextTheme.headline6!.copyWith(
+        fontSize: Sizes.dimen_24.sp,
+        color: Colors.white,
+      );
+
+  static TextStyle get whiteButton => _poppinsTextTheme.button!.copyWith(
+        fontSize: Sizes.dimen_14.sp,
+        color: Colors.white,
+      );
+
   static getTextTheme() => TextTheme(
         headline6: _whiteHeadline6,
         subtitle1: whiteSubtitle1,
         bodyText2: whiteBodyText2,
+        headline5: whiteHeadline5,
+        button: whiteButton,
       );
-      
 }
