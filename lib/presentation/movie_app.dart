@@ -19,7 +19,6 @@ class MovieApp extends StatefulWidget {
 class _MovieAppState extends State<MovieApp> {
   late LanguageBloc _languageBloc;
   final _navigatorKey = GlobalKey<NavigatorState>();
-
   @override
   void initState() {
     super.initState();
@@ -56,8 +55,7 @@ class _MovieAppState extends State<MovieApp> {
                   appBarTheme: const AppBarTheme(elevation: 0),
                 ),
                 locale: state.locale,
-                supportedLocales:
-                    Languages.languages.map((e) => Locale(e.code)).toList(),
+                supportedLocales: Languages.languages.map((e) => Locale(e.code)).toList(),
                 // locale: Locale(Languages.languages[0].code),
                 localizationsDelegates: const [
                   AppLocalizations.delegate,

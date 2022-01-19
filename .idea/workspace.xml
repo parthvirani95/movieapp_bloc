@@ -4,21 +4,8 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="277246d6-6f0d-407c-a314-90b55931959e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.flutter-plugins" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.flutter-plugins-dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins-dependencies" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/languages/en.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/languages/en.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/languages/es.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/languages/es.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/common/constants/translation_constants.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/common/constants/translation_constants.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/common/extension/string_extension.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/common/extension/string_extension.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/presentation/drawer/navigation_drawer.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/presentation/drawer/navigation_expanded_list_item.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/presentation/drawer/navigation_list_item.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/presentation/journeys/home/home_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/journeys/home/home_screen.dart" afterDir="false" />
+    <list default="true" id="277246d6-6f0d-407c-a314-90b55931959e" name="Default Changelist" comment="Working on feedback and about finished">
       <change beforePath="$PROJECT_DIR$/lib/presentation/movie_app.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/movie_app.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/presentation/themes/theme_text.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/themes/theme_text.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,6 +48,14 @@
       <option name="presentableId" value="Default" />
       <updated>1642587987694</updated>
     </task>
+    <task id="LOCAL-00001" summary="Working on feedback and about finished">
+      <created>1642588525413</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1642588525413</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -68,5 +63,20 @@
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
     </layout>
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Working on feedback and about finished" />
+    <option name="LAST_COMMIT_MESSAGE" value="Working on feedback and about finished" />
   </component>
 </project>
