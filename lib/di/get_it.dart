@@ -4,16 +4,20 @@ import 'package:movieapp_bloc/data/core/api_client.dart';
 import 'package:movieapp_bloc/data/data_sources/movie_remote_data_source.dart';
 import 'package:movieapp_bloc/domain/repositories/movie_repository.dart';
 import 'package:movieapp_bloc/domain/repositories/movie_repository_impl.dart';
+import 'package:movieapp_bloc/domain/usecases/get_cast.dart';
 import 'package:movieapp_bloc/domain/usecases/get_coming_soon.dart';
 import 'package:movieapp_bloc/domain/usecases/get_movie_detail.dart';
+import 'package:movieapp_bloc/domain/usecases/get_movie_videos.dart';
 import 'package:movieapp_bloc/domain/usecases/get_playing_now.dart';
 import 'package:movieapp_bloc/domain/usecases/get_popular.dart';
 import 'package:movieapp_bloc/domain/usecases/get_trending.dart';
+import 'package:movieapp_bloc/presentation/blocs/cast/cast_bloc.dart';
 import 'package:movieapp_bloc/presentation/blocs/language/language_bloc.dart';
 import 'package:movieapp_bloc/presentation/blocs/movie_backdrop/movie_backdrop_bloc.dart';
 import 'package:movieapp_bloc/presentation/blocs/movie_carousel/movie_carousel_bloc.dart';
 import 'package:movieapp_bloc/presentation/blocs/movie_detail/movie_detail_bloc.dart';
 import 'package:movieapp_bloc/presentation/blocs/movie_tabbed/movie_tabbed_bloc.dart';
+import 'package:movieapp_bloc/presentation/blocs/movie_videos/movie_videos_bloc.dart';
 
 final getItInstance = GetIt.I;
 
@@ -50,5 +54,19 @@ Future init() async {
 
   getItInstance.registerLazySingleton<GetMovieDetail>(() => GetMovieDetail(repository: getItInstance()));
 
-  getItInstance.registerFactory(() => MovieDetailBloc(getMovieDetail: getItInstance()));
+  getItInstance.registerFactory(
+    () => MovieDetailBloc(
+      getMovieDetail: getItInstance(),
+      castBloc: getItInstance(),
+      videosBloc: getItInstance(),
+    ),
+  );
+
+  getItInstance.registerFactory(() => CastBloc(getCast: getItInstance()));
+
+  getItInstance.registerFactory(() => MovieVideosBloc(getMovieVideos: getItInstance()));
+
+  getItInstance.registerLazySingleton<GetCast>(() => GetCast(movieRepository: getItInstance()));
+
+  getItInstance.registerLazySingleton<GetMovieVideos>(() => GetMovieVideos(repository: getItInstance()));
 }

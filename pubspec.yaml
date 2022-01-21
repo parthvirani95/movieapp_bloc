@@ -26,6 +26,9 @@ dependencies:
   flutter_svg: any
   cached_network_image: any
   wiredash: ^0.7.0+1
+  youtube_player_flutter: ^8.0.0
+
+
 
 dev_dependencies:
   flutter_test:
