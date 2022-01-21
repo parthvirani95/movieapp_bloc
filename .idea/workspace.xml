@@ -13,47 +13,33 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="277246d6-6f0d-407c-a314-90b55931959e" name="Default Changelist" comment="Working on movie detail page completed">
-      <change afterPath="$PROJECT_DIR$/android/.idea/.name" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/android/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/android/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/android/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/android/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/data/models/CastAndCrewResult.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/data/models/video_model.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/data/models/video_result_model.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/domain/entities/cast_entity.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/domain/entities/video_entity.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/domain/usecases/get_cast.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/domain/usecases/get_movie_videos.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/presentation/blocs/cast/cast_bloc.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/presentation/blocs/cast/cast_event.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/presentation/blocs/cast/cast_state.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/presentation/blocs/movie_videos/movie_videos_bloc.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/presentation/blocs/movie_videos/movie_videos_event.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/presentation/blocs/movie_videos/movie_videos_state.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/presentation/journeys/moviedetail/cast_widget.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/presentation/journeys/moviedetail/videos_widget.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/presentation/journeys/watch_video/watch_video_arguments.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/presentation/journeys/watch_video/watch_video_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/data/models/movie_search_model.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/data/models/movie_search_result_model.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/domain/entities/movie_search_entity.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/domain/entities/movie_search_params.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/domain/usecases/get_movie_search.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/presentation/blocs/movie_search/movie_search_bloc.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/presentation/blocs/movie_search/movie_search_event.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/presentation/blocs/movie_search/movie_search_state.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/presentation/journeys/search_movie/custom_search_movie_delegate.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/presentation/journeys/search_movie/search_movie_card.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.flutter-plugins-dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins-dependencies" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/languages/en.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/languages/en.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/languages/es.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/languages/es.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/common/constants/size_constants.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/common/constants/size_constants.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/common/constants/translation_constants.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/common/constants/translation_constants.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/common/extension/theme_extension.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/common/extension/theme_extension.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/data/core/api_client.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/core/api_client.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/data/data_sources/movie_remote_data_source.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/data_sources/movie_remote_data_source.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/data/models/movie_detail_model.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/models/movie_detail_model.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/di/get_it.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/di/get_it.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/domain/repositories/movie_repository.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/domain/repositories/movie_repository.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/domain/repositories/movie_repository_impl.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/domain/repositories/movie_repository_impl.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/domain/usecases/get_coming_soon.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/domain/usecases/get_coming_soon.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/domain/usecases/get_movie_detail.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/domain/usecases/get_movie_detail.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/domain/usecases/get_playing_now.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/domain/usecases/get_playing_now.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/domain/usecases/get_popular.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/domain/usecases/get_popular.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/domain/usecases/get_trending.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/domain/usecases/get_trending.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/presentation/blocs/movie_detail/movie_detail_bloc.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/blocs/movie_detail/movie_detail_bloc.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/presentation/journeys/moviedetail/big_poster.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/journeys/moviedetail/big_poster.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/presentation/journeys/moviedetail/movie_detail_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/journeys/moviedetail/movie_detail_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/presentation/blocs/movie_tabbed/movie_tabbed_bloc.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/blocs/movie_tabbed/movie_tabbed_bloc.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/presentation/blocs/movie_tabbed/movie_tabbed_event.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/blocs/movie_tabbed/movie_tabbed_event.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/presentation/journeys/home/home_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/journeys/home/home_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/presentation/widgets/movie_app_bar.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/widgets/movie_app_bar.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

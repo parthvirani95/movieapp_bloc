@@ -3,6 +3,7 @@ import 'package:movieapp_bloc/domain/entities/app_error.dart';
 import 'package:movieapp_bloc/domain/entities/cast_entity.dart';
 import 'package:movieapp_bloc/domain/entities/movie_detail_entity.dart';
 import 'package:movieapp_bloc/domain/entities/movie_entity.dart';
+import 'package:movieapp_bloc/domain/entities/movie_search_entity.dart';
 import 'package:movieapp_bloc/domain/entities/video_entity.dart';
 
 abstract class MovieRepository {
@@ -13,4 +14,5 @@ abstract class MovieRepository {
   Future<Either<AppError, MovieDetailEntity>> getMovieDetail(int id);
   Future<Either<AppError, List<CastEntity>>> getCastCrew(int id);
   Future<Either<AppError, List<VideoEntity>>> getVideoDetail(int id);
+  Future<Either<AppError, List<MovieSearchEntity>>> getMovieSearch(String query);
 }

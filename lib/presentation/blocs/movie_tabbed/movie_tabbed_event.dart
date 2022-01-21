@@ -12,6 +12,5 @@ class MovieTabChangedEvent extends MovieTabbedEvent {
   const MovieTabChangedEvent({this.currentTabIndex = 0});
 
   @override
-  List<Object> get props => [currentTabIndex];
+  List<Object> get props => [this.currentTabIndex];
 }
-

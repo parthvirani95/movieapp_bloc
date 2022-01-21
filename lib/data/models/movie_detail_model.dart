@@ -186,10 +186,10 @@ class ProductionCompany {
     required this.originCountry,
   });
 
-  final int id;
-  final String logoPath;
-  final String name;
-  final String originCountry;
+  final int? id;
+  final String? logoPath;
+  final String? name;
+  final String? originCountry;
 
   factory ProductionCompany.fromJson(Map<String, dynamic> json) => ProductionCompany(
         id: json["id"],

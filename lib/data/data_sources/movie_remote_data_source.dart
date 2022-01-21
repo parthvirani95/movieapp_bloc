@@ -5,6 +5,8 @@ import 'package:flutter/foundation.dart';
 import 'package:movieapp_bloc/data/core/api_client.dart';
 import 'package:movieapp_bloc/data/models/CastAndCrewResult.dart';
 import 'package:movieapp_bloc/data/models/movie_detail_model.dart';
+import 'package:movieapp_bloc/data/models/movie_search_model.dart';
+import 'package:movieapp_bloc/data/models/movie_search_result_model.dart';
 import 'package:movieapp_bloc/data/models/movies_result_model.dart';
 import 'package:movieapp_bloc/data/models/video_model.dart';
 import 'package:movieapp_bloc/data/models/video_result_model.dart';
@@ -19,6 +21,7 @@ abstract class MovieRemoteDataSource {
   Future<MovieDetailModel> getMovieDetail(int id);
   Future<List<CastModel>> getCastCrew(int id);
   Future<List<VideoResultModel>> getVideoDetail(int id);
+  Future<List<MovieSearchResultModel>> getMovieSearch(String query);
 }
 
 class MovieRemoteDataSourceImpl extends MovieRemoteDataSource {
@@ -121,5 +124,13 @@ class MovieRemoteDataSourceImpl extends MovieRemoteDataSource {
     final response = await _apiClient.get('movie/$id/videos');
     final videos = VideoModel.fromJson(response).videos;
     return videos;
+  }
+
+  @override
+  Future<List<MovieSearchResultModel>> getMovieSearch(String query) async {
+    Map<dynamic, dynamic> searchParams = {'query': '$query'};
+    final response = await _apiClient.get('search/movie', params: searchParams);
+    final searchResponse = MovieSearchModel.fromJson(response).results;
+    return searchResponse;
   }
 }

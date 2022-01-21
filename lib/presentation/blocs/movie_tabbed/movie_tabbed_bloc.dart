@@ -29,12 +29,14 @@ class MovieTabbedBloc extends Bloc<MovieTabbedEvent, MovieTabbedState> {
 
   FutureOr<void> movieTabChangedEvent(MovieTabChangedEvent event, Emitter<MovieTabbedState> emit) async {
     late Either<AppError, List<MovieEntity>> moviesEither;
+
     switch (event.currentTabIndex) {
       case 0:
         moviesEither = await getPopular(NoParams());
         break;
       case 1:
         moviesEither = await getPlayingNow(NoParams());
+
         break;
       case 2:
         moviesEither = await getComingSoon(NoParams());
