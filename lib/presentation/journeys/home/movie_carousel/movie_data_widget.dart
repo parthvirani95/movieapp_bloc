@@ -11,7 +11,7 @@ class MovieDataWidget extends StatelessWidget {
       builder: (context, state) {
         if (state is MovieBackdropChanged) {
           return Text(
-            state.movie.title,
+            state.movie.title!,
             textAlign: TextAlign.center,
             maxLines: 1,
             overflow: TextOverflow.fade,

@@ -46,7 +46,7 @@ class MovieModel extends MovieEntity {
         overview: json["overview"],
         releaseDate: DateTime.parse(json["release_date"]),
         adult: json["adult"],
-        backdropPath: json["backdrop_path"],
+        backdropPath: json["backdrop_path"] ?? '',
         voteCount: json["vote_count"],
         genreIds: List<int>.from(json["genre_ids"].map((x) => x)),
         title: json["title"],
@@ -86,12 +86,8 @@ final mediaTypeValues = EnumValues({"movie": MediaType.MOVIE});
 
 enum OriginalLanguage { EN, ES, IT, JA }
 
-final originalLanguageValues = EnumValues({
-  "en": OriginalLanguage.EN,
-  "es": OriginalLanguage.ES,
-  "it": OriginalLanguage.IT,
-  "ja": OriginalLanguage.JA
-});
+final originalLanguageValues =
+    EnumValues({"en": OriginalLanguage.EN, "es": OriginalLanguage.ES, "it": OriginalLanguage.IT, "ja": OriginalLanguage.JA});
 
 class EnumValues<T> {
   late Map<String, T> map;

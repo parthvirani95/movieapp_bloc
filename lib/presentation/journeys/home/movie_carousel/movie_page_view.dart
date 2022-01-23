@@ -10,8 +10,7 @@ class MoviePageView extends StatefulWidget {
   final List<MovieEntity> movies;
   final int initialPage;
 
-  const MoviePageView(
-      {Key? key, required this.movies, required this.initialPage})
+  const MoviePageView({Key? key, required this.movies, required this.initialPage})
       : assert(initialPage >= 0, 'initialPage cannot be less than 0'),
         super(key: key);
 
@@ -51,15 +50,14 @@ class _MoviePageViewState extends State<MoviePageView> {
           return AniamtedMovieCardWidget(
             index: index,
             pageController: _pageController,
-            movieId: movie.id,
-            posterPath: movie.posterPath,
+            movieId: movie.id!,
+            posterPath: movie.posterPath!,
           );
         },
         pageSnapping: true,
         itemCount: widget.movies.length,
         onPageChanged: (index) {
-          BlocProvider.of<MovieBackdropBloc>(context)
-              .add(MovieBackdropChangedEvent(movie: widget.movies[index]));
+          BlocProvider.of<MovieBackdropBloc>(context).add(MovieBackdropChangedEvent(movie: widget.movies[index]));
         },
       ),
     );

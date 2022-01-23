@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:movieapp_bloc/common/constants/languages.dart';
+import 'package:movieapp_bloc/common/constants/route_constants.dart';
 import 'package:movieapp_bloc/common/constants/size_constants.dart';
 import 'package:movieapp_bloc/common/constants/translation_constants.dart';
 import 'package:movieapp_bloc/common/extension/string_extension.dart';
@@ -42,7 +43,9 @@ class NavigationDrawer extends StatelessWidget {
             ),
             NavigationListItem(
               title: TranslationConstants.favoriteMovies.translate(context),
-              onPressed: () {},
+              onPressed: () {
+                Navigator.of(context).pushNamed(RouteList.favorite);
+              },
             ),
             NavigationExpandedListItem(
               title: TranslationConstants.language.translate(context),

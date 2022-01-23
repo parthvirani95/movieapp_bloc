@@ -2,11 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:movieapp_bloc/common/constants/languages.dart';
+import 'package:movieapp_bloc/common/constants/route_constants.dart';
 import 'package:movieapp_bloc/common/flutter_screenutil/flutter_screenutil.dart';
 import 'package:movieapp_bloc/di/get_it.dart';
 import 'package:movieapp_bloc/presentation/app_localizations.dart';
 import 'package:movieapp_bloc/presentation/blocs/language/language_bloc.dart';
-import 'package:movieapp_bloc/presentation/journeys/home/home_screen.dart';
+import 'package:movieapp_bloc/presentation/fade_page_route_builder.dart';
+import 'package:movieapp_bloc/presentation/routes.dart';
 import 'package:movieapp_bloc/presentation/themes/app_color.dart';
 import 'package:movieapp_bloc/presentation/themes/theme_text.dart';
 import 'package:movieapp_bloc/presentation/wiredash_app.dart';
@@ -24,6 +26,7 @@ class _MovieAppState extends State<MovieApp> {
   void initState() {
     super.initState();
     _languageBloc = getItInstance<LanguageBloc>();
+    _languageBloc.add(LoadPreferredLanguageEvent());
   }
 
   @override
@@ -63,7 +66,19 @@ class _MovieAppState extends State<MovieApp> {
                   GlobalMaterialLocalizations.delegate,
                   GlobalWidgetsLocalizations.delegate,
                 ],
-                home: const HomeScreen(),
+                builder: (context, child) {
+                  return child!;
+                },
+                // home: const HomeScreen(),
+                initialRoute: RouteList.initial,
+                onGenerateRoute: (RouteSettings settings) {
+                  final routes = Routes.getRoutes(settings);
+                  final WidgetBuilder? builder = routes[settings.name];
+                  return FadePageRouteBuilder(
+                    builder: builder!,
+                    settings: settings,
+                  );
+                },
               ),
             );
           }

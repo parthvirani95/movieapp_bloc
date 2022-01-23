@@ -6,8 +6,7 @@ import 'package:movieapp_bloc/presentation/journeys/home/movie_tabbed/movie_tab_
 class MovieListViewBuilder extends StatelessWidget {
   final List<MovieEntity> movies;
 
-  const MovieListViewBuilder({Key? key, required this.movies})
-      : super(key: key);
+  const MovieListViewBuilder({Key? key, required this.movies}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -17,9 +16,9 @@ class MovieListViewBuilder extends StatelessWidget {
       itemBuilder: (context, index) {
         final MovieEntity movie = movies[index];
         return MovieTabCardWidget(
-          movieId: movie.id,
-          title: movie.title,
-          posterPath: movie.posterPath,
+          movieId: movie.id!,
+          title: movie.title!,
+          posterPath: movie.posterPath!,
         );
       },
       separatorBuilder: (context, index) {

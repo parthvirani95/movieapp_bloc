@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:movieapp_bloc/common/constants/route_constants.dart';
 import 'package:movieapp_bloc/common/constants/translation_constants.dart';
-import 'package:movieapp_bloc/common/extension/string_extension.dart';
 import 'package:movieapp_bloc/presentation/blocs/movie_videos/movie_videos_bloc.dart';
 import 'package:movieapp_bloc/presentation/journeys/watch_video/watch_video_arguments.dart';
-import 'package:movieapp_bloc/presentation/journeys/watch_video/watch_video_screen.dart';
 import 'package:movieapp_bloc/presentation/widgets/button.dart';
 
 class VideoWidget extends StatelessWidget {
@@ -22,12 +21,9 @@ class VideoWidget extends StatelessWidget {
           return Button(
             text: TranslationConstants.watchTrailers,
             onPressed: () {
-              Navigator.of(context).push(
-                MaterialPageRoute(
-                  builder: (context) => WatchVideoScreen(
-                    watchVideoArguments: WatchVideoArguments(videos: _videos),
-                  ),
-                ),
+              Navigator.of(context).pushNamed(
+                RouteList.watchTrailer,
+                arguments: WatchVideoArguments(videos: _videos),
               );
             },
           );
