@@ -4,6 +4,7 @@ import 'package:movieapp_bloc/data/core/api_client.dart';
 import 'package:movieapp_bloc/data/data_sources/language_local_data_source.dart';
 import 'package:movieapp_bloc/data/data_sources/movie_local_data_source.dart';
 import 'package:movieapp_bloc/data/data_sources/movie_remote_data_source.dart';
+import 'package:movieapp_bloc/data/data_sources/theme_local_data_source.dart';
 import 'package:movieapp_bloc/domain/repositories/app_repository.dart';
 import 'package:movieapp_bloc/domain/repositories/app_repository_impl.dart';
 import 'package:movieapp_bloc/domain/repositories/movie_repository.dart';
@@ -19,18 +20,22 @@ import 'package:movieapp_bloc/domain/usecases/get_movie_videos.dart';
 import 'package:movieapp_bloc/domain/usecases/get_playing_now.dart';
 import 'package:movieapp_bloc/domain/usecases/get_popular.dart';
 import 'package:movieapp_bloc/domain/usecases/get_preferred_language.dart';
+import 'package:movieapp_bloc/domain/usecases/get_preferred_theme.dart';
 import 'package:movieapp_bloc/domain/usecases/get_trending.dart';
 import 'package:movieapp_bloc/domain/usecases/save_movies.dart';
 import 'package:movieapp_bloc/domain/usecases/update_language.dart';
+import 'package:movieapp_bloc/domain/usecases/update_theme.dart';
 import 'package:movieapp_bloc/presentation/blocs/cast/cast_bloc.dart';
 import 'package:movieapp_bloc/presentation/blocs/favorite/favorite_bloc.dart';
-import 'package:movieapp_bloc/presentation/blocs/language/language_bloc.dart';
-import 'package:movieapp_bloc/presentation/blocs/movie_backdrop/movie_backdrop_bloc.dart';
 import 'package:movieapp_bloc/presentation/blocs/movie_carousel/movie_carousel_bloc.dart';
 import 'package:movieapp_bloc/presentation/blocs/movie_detail/movie_detail_bloc.dart';
 import 'package:movieapp_bloc/presentation/blocs/movie_search/movie_search_bloc.dart';
 import 'package:movieapp_bloc/presentation/blocs/movie_tabbed/movie_tabbed_bloc.dart';
 import 'package:movieapp_bloc/presentation/blocs/movie_videos/movie_videos_bloc.dart';
+import 'package:movieapp_bloc/presentation/cubit/language/language_cubit.dart';
+import 'package:movieapp_bloc/presentation/cubit/loading/loading_cubit.dart';
+import 'package:movieapp_bloc/presentation/cubit/movie_backdrop/movie_backdrop_cubit.dart';
+import 'package:movieapp_bloc/presentation/cubit/themes/theme_cubit.dart';
 
 final getItInstance = GetIt.I;
 
@@ -58,9 +63,15 @@ Future init() async {
     ),
   );
 
-  getItInstance.registerFactory(() => MovieCarouselBloc(getTrending: getItInstance(), movieBackdropBloc: getItInstance()));
+  getItInstance.registerFactory(
+    () => MovieCarouselBloc(
+      getTrending: getItInstance(),
+      movieBackdropCubit: getItInstance(),
+      loadingCubit: getItInstance(),
+    ),
+  );
 
-  getItInstance.registerFactory(() => MovieBackdropBloc());
+  getItInstance.registerFactory(() => MovieBackdropCubit());
 
   getItInstance.registerFactory(
     () => MovieTabbedBloc(
@@ -68,6 +79,14 @@ Future init() async {
       getPlayingNow: getItInstance(),
       getComingSoon: getItInstance(),
     ),
+  );
+
+  getItInstance.registerLazySingleton<GetPreferredTheme>(
+    () => GetPreferredTheme(appRepository: getItInstance()),
+  );
+
+  getItInstance.registerLazySingleton<UpdateTheme>(
+    () => UpdateTheme(appRepository: getItInstance()),
   );
 
   getItInstance.registerLazySingleton<GetMovieDetail>(() => GetMovieDetail(repository: getItInstance()));
@@ -78,6 +97,7 @@ Future init() async {
       castBloc: getItInstance(),
       videosBloc: getItInstance(),
       favoriteBloc: getItInstance(),
+      loadingCubit: getItInstance(),
     ),
   );
 
@@ -91,7 +111,10 @@ Future init() async {
 
   getItInstance.registerLazySingleton<GetMovieSearch>(() => GetMovieSearch(movieRepository: getItInstance()));
 
-  getItInstance.registerFactory<MovieSearchBloc>(() => MovieSearchBloc(getMovieSearch: getItInstance()));
+  getItInstance.registerFactory<MovieSearchBloc>(() => MovieSearchBloc(
+        getMovieSearch: getItInstance(),
+        loadingCubit: getItInstance(),
+      ));
 
   getItInstance.registerLazySingleton<SaveMovies>(
     () => SaveMovies(movieRepository: getItInstance()),
@@ -115,11 +138,18 @@ Future init() async {
   );
 
   getItInstance.registerLazySingleton<AppRepository>(
-    () => AppRepositoryImpl(languageLocalDataSource: getItInstance()),
+    () => AppRepositoryImpl(
+      languageLocalDataSource: getItInstance(),
+      themeLocalDataSource: getItInstance(),
+    ),
   );
 
   getItInstance.registerLazySingleton<LanguageLocalDataSource>(
     () => LanguageLocalDataSourceImpl(),
+  );
+
+  getItInstance.registerLazySingleton<ThemeLocalDataSource>(
+    () => ThemeLocalDataSourceImpl(),
   );
 
   getItInstance.registerLazySingleton<GetPreferredLanguage>(
@@ -130,8 +160,14 @@ Future init() async {
     () => UpdateLanguage(appRepository: getItInstance()),
   );
 
-  getItInstance.registerSingleton<LanguageBloc>(LanguageBloc(
+  getItInstance.registerSingleton<LanguageCubit>(LanguageCubit(
     updateLanguage: getItInstance(),
     getPreferredLanguage: getItInstance(),
   ));
+
+  getItInstance.registerSingleton<LoadingCubit>(LoadingCubit());
+
+  getItInstance.registerSingleton<ThemeCubit>(
+    ThemeCubit(getPreferredTheme: getItInstance(), updateTheme: getItInstance()),
+  );
 }

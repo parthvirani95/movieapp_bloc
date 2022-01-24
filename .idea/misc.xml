@@ -1,4 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/MP VIRANI OFFICIAL/Desktop/Upcomming Project/Flutter/Learning/movieapp_bloc/android/app/src/main/res/drawable/launch_background.xml" value="0.26927083333333335" />
+      </map>
+    </option>
+  </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_15" project-jdk-name="Android API 30 Platform" project-jdk-type="Android SDK" />
 </project>

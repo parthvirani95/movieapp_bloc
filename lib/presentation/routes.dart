@@ -11,6 +11,7 @@ import 'journeys/watch_video/watch_video_arguments.dart';
 class Routes {
   static Map<String, WidgetBuilder> getRoutes(RouteSettings setting) => {
         RouteList.initial: (context) => HomeScreen(),
+        RouteList.home: (context) => HomeScreen(),
         RouteList.movieDetail: (context) => MovieDetailScreen(
               movieDetailArguments: setting.arguments as MovieDetailArguments,
             ),

@@ -22,6 +22,7 @@ class MovieRepositoryImpl extends MovieRepository {
   Future<Either<AppError, List<MovieEntity>>> getTrending() async {
     try {
       final movies = await remoteDataSource.getTrending();
+      await Future.delayed(Duration(seconds: 5));
       return movies;
     } on Exception {
       throw Exception('Something goes wrong.');
@@ -32,6 +33,7 @@ class MovieRepositoryImpl extends MovieRepository {
   Future<Either<AppError, List<MovieEntity>>> getComingSoon() async {
     try {
       final movies = await remoteDataSource.getComingSoon();
+      await Future.delayed(Duration(seconds: 5));
       return movies;
     } on Exception {
       throw Exception('Something goes wrong.');
@@ -42,6 +44,7 @@ class MovieRepositoryImpl extends MovieRepository {
   Future<Either<AppError, List<MovieEntity>>> getPlayingNow() async {
     try {
       final movies = await remoteDataSource.getPlayingNow();
+      await Future.delayed(Duration(seconds: 5));
       return movies;
     } on Exception {
       throw Exception('Something goes wrong.');
@@ -52,6 +55,7 @@ class MovieRepositoryImpl extends MovieRepository {
   Future<Either<AppError, List<MovieEntity>>> getPopular() async {
     try {
       final movies = await remoteDataSource.getPopular();
+      await Future.delayed(Duration(seconds: 5));
       return movies;
     } on Exception {
       throw Exception('Something goes wrong.');
@@ -62,6 +66,7 @@ class MovieRepositoryImpl extends MovieRepository {
   Future<Either<AppError, MovieDetailModel>> getMovieDetail(int id) async {
     try {
       final movie = await remoteDataSource.getMovieDetail(id);
+      await Future.delayed(Duration(seconds: 5));
       return Right(movie);
     } on SocketException {
       return Left(AppError(AppErrorType.network));
@@ -74,6 +79,7 @@ class MovieRepositoryImpl extends MovieRepository {
   Future<Either<AppError, List<CastEntity>>> getCastCrew(int id) async {
     try {
       final cast = await remoteDataSource.getCastCrew(id);
+      await Future.delayed(Duration(seconds: 5));
 
       return Right(cast);
     } on SocketException {
@@ -87,6 +93,7 @@ class MovieRepositoryImpl extends MovieRepository {
   Future<Either<AppError, List<VideoEntity>>> getVideoDetail(int id) async {
     try {
       final video = await remoteDataSource.getVideoDetail(id);
+      await Future.delayed(Duration(seconds: 5));
       return Right(video);
     } on SocketException {
       return Left(AppError(AppErrorType.network));
@@ -99,6 +106,7 @@ class MovieRepositoryImpl extends MovieRepository {
   Future<Either<AppError, List<MovieSearchEntity>>> getMovieSearch(String query) async {
     try {
       final movieSearchResult = await remoteDataSource.getMovieSearch(query);
+      await Future.delayed(Duration(seconds: 5));
       return Right(movieSearchResult);
     } on SocketException {
       return Left(AppError(AppErrorType.network));
@@ -111,7 +119,7 @@ class MovieRepositoryImpl extends MovieRepository {
   Future<Either<AppError, void>> saveMovie(MovieEntity movieEntity) async {
     try {
       final response = await localDataSource.saveMovie(MovieTable.fromMovieEntity(movieEntity));
-
+      await Future.delayed(Duration(seconds: 5));
       return Right(response);
     } on Exception {
       return Left(AppError(AppErrorType.database));
@@ -122,6 +130,7 @@ class MovieRepositoryImpl extends MovieRepository {
   Future<Either<AppError, bool>> checkIfMovieFavorite(int movieId) async {
     try {
       final response = await localDataSource.checkIfMovieFavourite(movieId);
+      await Future.delayed(Duration(seconds: 5));
       return Right(response);
     } on Exception {
       return Left(AppError(AppErrorType.database));

@@ -29,6 +29,7 @@ dependencies:
   youtube_player_flutter: ^8.0.0
   hive: any
   path_provider: any
+  flare_flutter: any
 
 
 dev_dependencies:
@@ -48,3 +49,4 @@ flutter:
     - assets/svgs/
     - assets/pngs/
     - assets/languages/
+    - assets/animation/

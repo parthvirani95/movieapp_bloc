@@ -3,13 +3,16 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:movieapp_bloc/common/constants/languages.dart';
 import 'package:movieapp_bloc/common/constants/route_constants.dart';
 import 'package:movieapp_bloc/common/constants/size_constants.dart';
+import 'package:movieapp_bloc/common/constants/theme.dart';
 import 'package:movieapp_bloc/common/constants/translation_constants.dart';
 import 'package:movieapp_bloc/common/extension/string_extension.dart';
 import 'package:movieapp_bloc/common/flutter_screenutil/flutter_screenutil.dart';
 import 'package:movieapp_bloc/presentation/app_dialog.dart';
-import 'package:movieapp_bloc/presentation/blocs/language/language_bloc.dart';
+import 'package:movieapp_bloc/presentation/cubit/language/language_cubit.dart';
+import 'package:movieapp_bloc/presentation/cubit/themes/theme_cubit.dart';
 import 'package:movieapp_bloc/presentation/journeys/drawer/navigation_expanded_list_item.dart';
 import 'package:movieapp_bloc/presentation/journeys/drawer/navigation_list_item.dart';
+import 'package:movieapp_bloc/presentation/themes/app_color.dart';
 import 'package:movieapp_bloc/presentation/widgets/logo.dart';
 import 'package:wiredash/wiredash.dart';
 
@@ -51,13 +54,17 @@ class NavigationDrawer extends StatelessWidget {
               title: TranslationConstants.language.translate(context),
               children: Languages.languages.map((e) => e.value).toList(),
               onPressed: (index) {
-                BlocProvider.of<LanguageBloc>(context).add(
-                  ToggleLanguageEvent(
-                    language: Languages.languages[index],
-                  ),
-                );
+                BlocProvider.of<LanguageCubit>(context).toggleLanguage(Languages.languages[index]);
               },
             ),
+
+            // NavigationExpandedListItem(
+            //   title: TranslationConstants.theme.translate(context),
+            //   children: ThemesList.themeList.map((e) => e.key).toList(),
+            //   onPressed: (index) {
+            //     BlocProvider.of<ThemeCubit>(context).toggleTheme(ThemesList.themeList[index].theme);
+            //   },
+            // ),
             NavigationListItem(
               title: TranslationConstants.feedback.translate(context),
               onPressed: () {
@@ -72,6 +79,21 @@ class NavigationDrawer extends StatelessWidget {
                 _showDialog(context);
               },
             ),
+            BlocBuilder<ThemeCubit, Themes>(builder: (context, theme) {
+              return Align(
+                alignment: Alignment.center,
+                child: IconButton(
+                  //2
+                  onPressed: () => context.read<ThemeCubit>().toggleTheme(),
+                  icon: Icon(
+                    //3
+                    theme == Themes.dark ? Icons.brightness_4_sharp : Icons.brightness_7_sharp,
+                    color: context.read<ThemeCubit>().state == Themes.dark ? Colors.white : AppColor.vulcan,
+                    size: Sizes.dimen_40.w,
+                  ),
+                ),
+              );
+            }),
           ],
         ),
       ),

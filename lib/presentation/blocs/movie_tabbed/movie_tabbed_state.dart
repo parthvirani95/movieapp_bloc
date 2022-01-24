@@ -9,6 +9,10 @@ abstract class MovieTabbedState extends Equatable {
   List<Object> get props => [currentTabIndex];
 }
 
+class MovieTabLoading extends MovieTabbedState {
+  MovieTabLoading({required int currentTabIndex}) : super(currentTabIndex: currentTabIndex);
+}
+
 class MovieTabbedInitial extends MovieTabbedState {
   final int currentTabIndex;
   const MovieTabbedInitial({required this.currentTabIndex}) : super(currentTabIndex: currentTabIndex);
