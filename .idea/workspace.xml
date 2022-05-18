@@ -12,59 +12,12 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="277246d6-6f0d-407c-a314-90b55931959e" name="Default Changelist" comment="Best Way of Navigation complete">
-      <change afterPath="$PROJECT_DIR$/android/app/src/main/res/mipmap-hdpi/logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/android/app/src/main/res/mipmap-mdpi/logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/android/app/src/main/res/mipmap-xhdpi/logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/android/app/src/main/res/mipmap-xxhdpi/logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/android/app/src/main/res/mipmap-xxxhdpi/logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/animation/loading_circle.flr" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/common/constants/theme.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/data/data_sources/theme_local_data_source.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/domain/entities/theme_entity.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/domain/usecases/get_preferred_theme.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/domain/usecases/update_theme.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/presentation/cubit/loading/loading_cubit.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/presentation/cubit/movie_backdrop/movie_backdrop_cubit.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/presentation/cubit/themes/theme_cubit.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/presentation/journeys/loading/loading_circle.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/presentation/journeys/loading/loading_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.flutter-plugins-dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins-dependencies" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="277246d6-6f0d-407c-a314-90b55931959e" name="Default Changelist" comment="Complete Movie App With Industry standard clean architecture and bloc as state managment.">
+      <change afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__C__Users_MP_VIRANI_OFFICIAL_Desktop_Upcomming_Project_Flutter_Learning_movieapp_bloc_build_app_intermediates_flutter_debug_libs_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/android/.idea/dbnavigator.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/movieapp_bloc.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/movieapp_bloc.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/app/src/main/res/drawable/launch_background.xml" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/src/main/res/drawable/launch_background.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/languages/en.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/languages/en.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/languages/es.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/languages/es.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/common/constants/route_constants.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/common/constants/route_constants.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/common/constants/translation_constants.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/common/constants/translation_constants.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/di/get_it.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/di/get_it.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/domain/repositories/app_repository.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/domain/repositories/app_repository.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/domain/repositories/app_repository_impl.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/domain/repositories/app_repository_impl.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/domain/repositories/movie_repository_impl.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/domain/repositories/movie_repository_impl.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/presentation/blocs/language/language_bloc.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/cubit/language/language_cubit.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/presentation/blocs/language/language_event.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/presentation/blocs/language/language_state.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/cubit/language/language_state.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/presentation/blocs/movie_backdrop/movie_backdrop_bloc.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/presentation/blocs/movie_backdrop/movie_backdrop_event.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/presentation/blocs/movie_backdrop/movie_backdrop_state.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/presentation/blocs/movie_carousel/movie_carousel_bloc.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/blocs/movie_carousel/movie_carousel_bloc.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/presentation/blocs/movie_detail/movie_detail_bloc.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/blocs/movie_detail/movie_detail_bloc.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/presentation/blocs/movie_search/movie_search_bloc.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/blocs/movie_search/movie_search_bloc.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/presentation/blocs/movie_tabbed/movie_tabbed_bloc.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/blocs/movie_tabbed/movie_tabbed_bloc.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/presentation/blocs/movie_tabbed/movie_tabbed_state.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/blocs/movie_tabbed/movie_tabbed_state.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/presentation/journeys/drawer/navigation_drawer.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/journeys/drawer/navigation_drawer.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/presentation/journeys/home/home_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/journeys/home/home_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/presentation/journeys/home/movie_carousel/movie_backdrop_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/journeys/home/movie_carousel/movie_backdrop_widget.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/presentation/journeys/home/movie_carousel/movie_data_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/journeys/home/movie_carousel/movie_data_widget.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/presentation/journeys/home/movie_carousel/movie_page_view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/journeys/home/movie_carousel/movie_page_view.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/presentation/journeys/home/movie_tabbed/movie_tabbed_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/journeys/home/movie_tabbed/movie_tabbed_widget.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/presentation/movie_app.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/movie_app.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/presentation/routes.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/routes.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/presentation/themes/theme_text.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/themes/theme_text.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/presentation/widgets/movie_app_bar.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/widgets/movie_app_bar.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,7 +27,6 @@
   <component name="CodeInsightWorkspaceSettings">
     <option name="optimizeImportsOnTheFly" value="true" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[3436ab6e]" />
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
@@ -120,6 +72,9 @@
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="RunOnceActivity.cidr.known.project.marker" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="cidr.known.project.marker" value="true" />
     <property name="dart.analysis.tool.window.force.activate" value="true" />
     <property name="dart.analysis.tool.window.visible" value="false" />
     <property name="io.flutter.reload.alreadyRun" value="true" />
@@ -220,7 +175,14 @@
       <option name="project" value="LOCAL" />
       <updated>1642910754407</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Complete Movie App With Industry standard clean architecture and bloc as state managment.">
+      <created>1643006672073</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1643006672073</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -248,6 +210,7 @@
     <MESSAGE value="Working on movie detail page completed" />
     <MESSAGE value="Search Movie Finished" />
     <MESSAGE value="Best Way of Navigation complete" />
-    <option name="LAST_COMMIT_MESSAGE" value="Best Way of Navigation complete" />
+    <MESSAGE value="Complete Movie App With Industry standard clean architecture and bloc as state managment." />
+    <option name="LAST_COMMIT_MESSAGE" value="Complete Movie App With Industry standard clean architecture and bloc as state managment." />
   </component>
 </project>
